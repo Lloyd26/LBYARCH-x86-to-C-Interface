@@ -21,8 +21,9 @@ $x = {1.0 , 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0}$
 $y = {11.0 , 12.0, 13.0, 14.0, 15.0, 16.0, 17.0, 18.0}$  
 $z[i] = a * x[i] + y[i]$
 
-![C Correctness Check](C Correctness Check.png)
-![ASM Correctness Check](ASM Correctness Check.png)
+| **C Correctness Check** | **ASM Correctness Check** |
+|---|---|
+| ![C Correctness Check](C%20Correctness%20Check.png) | ![ASM Correctness Check](ASM%20Correctness%20Check.png) |
 
 ## Brief Performance Analysis
 Our analysis reveals a significant performance advantage for the Assembly (ASM) kernel compared to the C kernel. The ASM kernel achieves up to 2x speed for larger datasets ($n=268,435,546$) in Debug mode. This is likely due to ASM’s ability for finer-grained control over hardware resources, leading to more efficient execution.
