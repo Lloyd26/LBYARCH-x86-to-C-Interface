@@ -3,7 +3,7 @@
 #include <time.h>
 #include <math.h>
 
-#define EXP 10 // TO CHANGE for array sizing
+#define EXP 24 // TO CHANGE for array sizing
 #define A_VALUE 2.0
 #define TRIAL_RUNS 30
 
@@ -70,7 +70,6 @@ int main(void) {
     // Trial Run SAXPY in C
     start = clock();
 
-    //TODO: Write Function Here
     runSAXPYInNASM(n, a, x, y, z);
 
     end = clock();
@@ -84,8 +83,7 @@ int main(void) {
         double time;
         start = clock();
 
-        //TODO: Write Function Here
-        // runSAXPYInNASM(n, a, x, y, z);
+        runSAXPYInNASM(n, a, x, y, z);
 
         end = clock();
         time = (double)(end - start) * 1000 / CLOCKS_PER_SEC; // converting to milliseconds
