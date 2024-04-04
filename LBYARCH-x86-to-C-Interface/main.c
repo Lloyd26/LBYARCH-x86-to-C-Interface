@@ -43,6 +43,12 @@ int main(void) {
     runSAXPYInC(n, a, x, y, z);
 
     end = clock();
+
+    int i;
+    for (i = 0; i < 10; i++) {
+        printf("Z[%d] = %.2f\n", i, z[i]);
+    }
+
     time = (double)(end - start) * 1000 / CLOCKS_PER_SEC; // converting to milliseconds
     printf("Trial Execution Time: \033[1;31m%lf milliseconds\033[0m\n", time);
 
@@ -62,7 +68,7 @@ int main(void) {
     cAvgRun = cAvgRun / TRIAL_RUNS;
     printf("Average Execution Time: \033[1;31m%lf milliseconds\033[0m\n\n", cAvgRun);
 
-
+    z = (float*)malloc(n * sizeof(float));
 
     /* NASM KERNEL */
     printf("\033[1;32mLoading NASM Kernel ...\033[0m\n");
@@ -73,6 +79,11 @@ int main(void) {
     runSAXPYInNASM(n, a, x, y, z);
 
     end = clock();
+
+    for (i = 0; i < 10; i++) {
+        printf("Z[%d] = %.2f\n", i, z[i]);
+    }
+
     time = (double)(end - start) * 1000 / CLOCKS_PER_SEC; // converting to milliseconds
     printf("Trial Execution Time: \033[1;31m%lf milliseconds\033[0m\n", time);
 
